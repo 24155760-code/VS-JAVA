@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class universityp {
 
     String universityName = "ABC University";
@@ -14,7 +16,7 @@ class universityp {
     }
 
     public static void main(String[] args) {
-        University u = new University();
+        university u = new university();
         Department d = u.new Department(); // inner class object
         d.display();
     }
