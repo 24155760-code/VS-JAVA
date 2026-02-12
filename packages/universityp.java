@@ -1,11 +1,10 @@
-import java.util.Scanner;
-
 class universityp {
 
     String universityName = "ABC University";
     String location = "Delhi";
 
     class Department {
+
         String deptName = "Computer Science";
         String hodName = "Dr. Sharma";
 
@@ -16,8 +15,10 @@ class universityp {
     }
 
     public static void main(String[] args) {
-        university u = new university();
-        Department d = u.new Department(); // inner class object
+
+        universityp u = new universityp();
+        universityp.Department d = u.new Department();
+
         d.display();
     }
 }
