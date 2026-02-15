@@ -4,19 +4,23 @@ import java.util.Scanner;
 
 public class arrayexcep {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-
-        int arr[] = new int[4]; // array size is 4
+        int arr[] = new int[5]; // ✅ array size matches number of inputs
 
         try {
             System.out.println("Enter 5 numbers:");
-            for (int i = 0; i < 5; i++) {
-                arr[i] = sc.nextInt(); // index 4 causes exception
+            for (int i = 0; i < arr.length; i++) { // ✅ use arr.length for safety
+                arr[i] = sc.nextInt();
             }
-        }
-        catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Exception in thread \"main\" java.lang.ArrayIndexOutOfBoundsException: 4");
+
+            System.out.println("You entered:");
+            for (int num : arr) {
+                System.out.print(num + " ");
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: " + e.getMessage()); // ✅ print actual exception
+        } finally {
+            sc.close(); // ✅ close Scanner
         }
     }
 }
