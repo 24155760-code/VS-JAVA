@@ -6,10 +6,15 @@ public class TaskManager {
 
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("Task Manager");
-        frame.setSize(300,300);
+        JFrame frame = new JFrame("Personal Productivity App");
+        frame.setSize(350,400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
+
+        // -------- TASK MANAGER --------
+
+        JLabel taskLabel = new JLabel("Task Manager");
+        frame.add(taskLabel);
 
         JTextField taskField = new JTextField(15);
 
@@ -54,6 +59,22 @@ public class TaskManager {
                 }
             }
         });
+
+
+        // -------- HABIT TRACKER --------
+
+        JLabel habitLabel = new JLabel("Habit Tracker");
+        frame.add(habitLabel);
+
+        JCheckBox exercise = new JCheckBox("Exercise");
+        JCheckBox reading = new JCheckBox("Reading");
+        JCheckBox meditation = new JCheckBox("Meditation");
+        JCheckBox study = new JCheckBox("Study");
+
+        frame.add(exercise);
+        frame.add(reading);
+        frame.add(meditation);
+        frame.add(study);
 
         frame.setVisible(true);
     }
